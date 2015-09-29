@@ -23,6 +23,7 @@ Before do
   @admin_api = conjur_api = Conjur::Authn.connect
   
   @namespace = conjur_api.create_variable("text/plain", "id").id
+  puts "namespace: #{@namespace}"
   user = conjur_api.create_user "admin@#{@namespace}", ownerid: "#{Conjur.configuration.account}:user:#{username}"
 
   netrc[Conjur::Authn.host] = [ "admin@#{@namespace}", user.api_key ]
