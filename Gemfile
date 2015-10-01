@@ -6,7 +6,8 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in conjur.gemspec
 gemspec
 
-gem 'conjur-api', git: 'https://github.com/conjurinc/api-ruby.git', branch: 'master'
+gem 'conjur-api', git: 'https://github.com/apotterri/api-ruby.git', branch: 'audit-follow_150925'
+# gem 'conjur-api', git: 'https://github.com/conjurinc/api-ruby.git', branch: 'master'
 
 group :test, :development do
   gem 'pry'
