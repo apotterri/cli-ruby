@@ -1,10 +1,10 @@
 Feature: Fetch audit events
 
   Background:
-    Given I run `conjur variable create $ns/secret MY_SECRET`
-    And I run `conjur variable value $ns/secret`
+    Given I successfully run `conjur variable create $ns/secret MY_SECRET`
+    And I successfully run `conjur variable value $ns/secret`
     
   Scenario: Fetch works
-    When I run `conjur audit resource -s variable:$ns/secret`
-    Then the output should match /checked that they can read .*:variable:$ns\/secret/
+    When I successfully run `conjur audit resource -s variable:$ns/secret`
+    Then the output should match /checked that they can execute .*:variable:.*secret/
 
